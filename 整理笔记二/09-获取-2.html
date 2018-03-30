@@ -11,23 +11,35 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-        #wrap{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
     </style>
 </head>
-</head>
-    <body>
-    <div id="wrap"></div>
+<body>
+<div id="wrap">
+    <p></p>
+    <p></p>
+</div>
+
+<p></p>
 
         <script>
 
-            var a=50;
+            /*
+                  document.getElementById()
 
-            alert(a); //会认为a是一个变量
+                  元素.getElementsByClassName()   //不兼容IE8及以下
 
+                  元素.getElementsByTagName()
+
+                  元素.getElementsByName()
+
+                  必须是一个元素，而不是一个元素集合
+
+            */
+                //只获取wrap里面的p集合
+                var oWrap=document.getElementById("wrap");
+
+                var ap=oWrap.getElementsByTagName("p");
+                    
         </script>
 </body>
 </html>

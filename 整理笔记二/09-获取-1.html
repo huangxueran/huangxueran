@@ -11,22 +11,26 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-        #wrap{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
     </style>
 </head>
-</head>
-    <body>
-    <div id="wrap"></div>
+<body>
+    <div id="wrap">
+        <p></p>
+        <p></p>
+    </div>
+
+    <p></p>
 
         <script>
 
-            var a=50;
+            var p=document.getElementsByTagName("p");
+            p[0].innerHTML=1;
 
-            alert(a); //会认为a是一个变量
+            p[1].innerHTML=23456789;
+
+            p[2].innerHTML=101112131415;
+
+            //p[3].innerHTML = 789; //没有第4个，所以报错
 
         </script>
 </body>

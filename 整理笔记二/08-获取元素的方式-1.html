@@ -11,22 +11,33 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-        #wrap{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-        }
+
     </style>
 </head>
 </head>
-    <body>
+<body>
     <div id="wrap"></div>
 
+    <p class="gg"></p>
+    <p class="gg"></p>
+    <p class="gg"></p>
+
         <script>
+            /*
+                document.getElementById();
 
-            var a=50;
+                document.getElementsbyClassName();//获取的是个节点集合，伪数组  不兼容IE8及以下
 
-            alert(a); //会认为a是一个变量
+                使用 [数字] 的形式拿出里面的某一个来操作
+
+
+             */
+
+            var x="gg";
+
+            var aGG=document.getElementsByClassName(x);
+
+            aGG[2].innerHTML="123456";
 
         </script>
 </body>
