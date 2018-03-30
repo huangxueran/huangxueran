@@ -11,15 +11,30 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-
     </style>
 </head>
+
 <body>
 <div id="wrap"></div>
-    //( )或者{ }
-<script src="goudan.js"></script>
-<!-- 引入外部的JS -->
+
+<!--
+    当script标签规定了 defer="defer" 这个标签属性的时候，这个script标签引入的js文件会等到html文档行结构加载完之后运
+
+    当script用src来引入外部js文件的时候，那么这个script标签里面就不能再写代码了！
+-->
+
+    <script defer="defer"src="test.js"></script>
+
+    <script>
+        var a=10;//这是单行注释
+
+        /*
+             这是多行注释
+        S
+              这是多行注释
+          */
+            alert("黄学然")
+    </script>
 
 </body>
 </html>
-
