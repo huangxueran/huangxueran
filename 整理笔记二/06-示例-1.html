@@ -1,0 +1,46 @@
+<!doctype html><!--文档头信息-->
+<html onclick="alert('点我JR啥?')"><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记二</title><!--网站标题-->
+    <style>
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+</head>
+    <body>
+        <div id="wrap"></div>
+
+        <script>
+
+            /*
+            定义变量：
+            x = 2
+            y = 3
+            z = x+y
+
+            字母 数字 $ _   不能以数字开头
+            */
+
+            //页面一打开，就立马给wrap加个几个文字
+            document.getElementById("wrap").innerHTML="123456";
+
+            //还给wrap注册了一个点击事件
+            document.getElementById("wrap").onclick=function ( ) {
+                alert(1);
+            };
+
+        </script>
+</body>
+</html>
