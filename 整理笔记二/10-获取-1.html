@@ -14,32 +14,34 @@
     </style>
 </head>
 <body>
-    <div id="wrap">
-        <p></p>
-        <p></p>
-    </div>
-
-<p></p>
+<div id="wrap">
+    <p>
+        <i></i>
+        <i></i>
+    </p>
+</div>
 
         <script>
-
             /*
-                  document.getElementById()
+               能使用css选择器查找元素
 
-                  元素.getElementsByClassName()   //不兼容IE8及以下
+               兼容 IE8及以上
 
-                  元素.getElementsByTagName()
+               元素.querySelector()   // 单个元素
 
-                  元素.getElementsByName()
+               元素.querySelectorAll()  // 集合
+             */
 
-                  必须是一个元素，而不是一个元素集合
+            var x = document.querySelectorAll("#wrap p i");
 
-            */
-                //只获取wrap里面的p集合
-                var oWrap=document.getElementById("wrap");
+            console.log(x);
 
-                var ap=oWrap.getElementsByTagName("p");
+            x[1].innerHTML = "我是x操作的";
 
+            var y = document.querySelector("#wrap p i");
+            y.innerHTML = "我是y操作的";
+
+            alert(x[0] === y );
         </script>
 </body>
 </html>

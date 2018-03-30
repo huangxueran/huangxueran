@@ -14,10 +14,11 @@
     </style>
 </head>
 <body>
-    <div id="wrap">
-        <p></p>
-        <p></p>
-    </div>
+<div id="wrap">
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
 
 <p></p>
 
@@ -35,10 +36,10 @@
                   必须是一个元素，而不是一个元素集合
 
             */
-                //只获取wrap里面的p集合
-                var oWrap=document.getElementById("wrap");
+            var aP = document.getElementById("wrap").getElementsByTagName("p");
+            console.log(aP);
 
-                var ap=oWrap.getElementsByTagName("p");
+            alert( aP.length );
 
         </script>
 </body>
