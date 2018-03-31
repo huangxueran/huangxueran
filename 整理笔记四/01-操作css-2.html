@@ -13,27 +13,33 @@
         img{border:none;}
         a{text-decoration: none;}
         ul{list-style: none;}
+
+        div#wrap{
+            width: 200px;
+        }
     </style>
 
-    <style id="goudan"></style>
+    <style id="goudan">
+        body{font-size: 12px;}
+    </style>
 
 </head>
 
-    <body>
+<body>
 
-        <div id="wrap"></div>
+<div id="wrap"></div>
 
-            <script>
-                /*
-                    JavaScript 去操作 css样式
-                    外部样式表
-                    内部样式表
-                    行内样式
-                */
-                var oGou = document.getElementById("goudan");
-                oGou.innerHTML += "#wrap{width:100px;height:100px;background:pink;}";
+<script>
+    /*
+        JavaScript 去操作 css样式
+        外部样式表
+        内部样式表
+        行内样式
+    */
+    var oGou = document.getElementById("goudan");
+    oGou.innerHTML += "#wrap{width:100px;height:100px;background:pink;}";
 
 
-            </script>
-    </body>
+</script>
+</body>
 </html>

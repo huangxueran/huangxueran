@@ -1,0 +1,59 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（四）</title><!--网站标题-->
+    <style>
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        a{text-decoration: none;}
+        ul{list-style: none;}
+        #img1,#img2{
+            position: absolute;
+            top: 0;
+            left: 0;
+                     }
+        #img2{
+            display: none;
+              }
+    </style>
+</head>
+
+    <body>
+
+        <img id="img1" src="images/1.jpg" alt="">
+        <img id="img2" src="images/2.jpg" alt="">
+
+            <script>
+                /*
+                怎么样让图片2显示：
+                   1. 1个img标签  改变src
+                   2. 2个img标签  改变display / z-index
+                */
+                //方法2：
+                var oImg1 = document.getElementById("img1"),
+
+                    oImg2 = document.getElementById("img2");
+
+                oImg1.onclick = function () {
+
+                    this.style.display = "none";
+
+                    oImg2.style.display = "block";
+
+                };
+                oImg2.onclick = function () {
+
+                    this.style.display = "none";
+
+                    oImg1.style.display = "block";
+
+                };
+            </script>
+    </body>
+</html>

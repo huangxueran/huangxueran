@@ -13,9 +13,17 @@
         img{border:none;}
         a{text-decoration: none;}
         ul{list-style: none;}
+
+        div#wrap{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+        }
     </style>
 
-    <style id="goudan"></style>
+    <style id="goudan">
+        body{font-size: 12px;}
+    </style>
 
 </head>
 
@@ -30,9 +38,7 @@
                     内部样式表
                     行内样式
                 */
-                var oGou = document.getElementById("goudan");
-                oGou.innerHTML += "#wrap{width:100px;height:100px;background:pink;}";
-
+                var oW=document.getElementById("wrap");
 
             </script>
     </body>

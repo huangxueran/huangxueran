@@ -6,17 +6,25 @@
     <meta name="Author" content="黄学然"><!--作者-->
     <meta name="Keywords" content="作业"><!--关键字-->
     <meta name="Description" content=""><!--描述-->
-    <title>整理笔记（三）</title><!--网站标题-->
+    <title>整理笔记（四）</title><!--网站标题-->
     <style>
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
         a{text-decoration: none;}
         ul{list-style: none;}
+        .fl{
+            float: left;
+        }
+        .fl{
+            float:right;
+        }
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
     </style>
-
-    <style id="goudan"></style>
-
 </head>
 
     <body>
@@ -24,15 +32,18 @@
         <div id="wrap"></div>
 
             <script>
-                /*
-                    JavaScript 去操作 css样式
-                    外部样式表
-                    内部样式表
-                    行内样式
-                */
-                var oGou = document.getElementById("goudan");
-                oGou.innerHTML += "#wrap{width:100px;height:100px;background:pink;}";
 
+                var oW = document.getElementById("wrap");
+
+                //事件函数里面的this，就代表事件发生的那个主体
+                 oW.onclick=function ( ) {
+
+                   oW.style.width="200px";
+
+                   oW.style.height="200px";
+
+                   oW.style.background="pink";
+              };
 
             </script>
     </body>
