@@ -1,0 +1,37 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（四）</title><!--网站标题-->
+    <style>
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        a{text-decoration: none;}
+        ul{list-style: none;}
+    </style>
+</head>
+
+    <body>
+            <img id="ii" src="1.png" alt="" >
+
+                <script>
+
+                    /*
+                         注意点：
+                             1. js获取的各种路径时绝对路径
+                             2. 获取到确却的对象节点之后，即使改变任何属性，变量也都代表这个对象
+                     */
+                    var goudan = document.getElementById("ii");
+
+                    var s = goudan.src;
+
+                    alert(s);
+
+                </script>
+    </body>
+</html>
