@@ -1,0 +1,39 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+    </style>
+</head>
+
+    <body>
+        <div id="wrap"></div>
+
+            <script>
+
+                //目前基于ES6考虑的话，推荐这样的形式定义函数
+                var xx=function () {
+
+                    alert(4);
+
+                    alert(this);
+
+                };
+
+
+                //定义函数的时候没办法确定this指向，只有在执行函数的时候才能确定this指向
+                //事件函数里面，this指向事件触发的主体
+                //在自执行时，this指向window，但是严格模式下，指向undefined
+                document.onclick=xx;
+
+            </script>
+    </body>
+</html>
