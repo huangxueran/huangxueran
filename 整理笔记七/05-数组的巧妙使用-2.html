@@ -1,0 +1,73 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 100px;
+            height: 200px;
+        }
+        #wrap.red{
+            background-color: red;
+        }
+        #wrap.pink{
+            background-color: pink;
+        }
+        #wrap.green{
+            background-color: green;
+        }
+        #wrap.blue{
+            background-color: blue;
+        }
+        #wrap.yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+    <body>
+        <div id="wrap" class="red"></div>
+
+            <script>
+
+                var oWrap=document.getElementById("wrap");
+
+                var index=0;
+
+                oWrap.onclick = function ( ) {
+
+                    switch (index) {
+                        case 0:
+                            this.className = "pink";
+                            break;
+                        case 1:
+                            this.className = "green";
+                            break;
+                        case 2:
+                            this.className = "blue";
+                            break;
+                        case 3:
+                            this.className = "yellow";
+                            break;
+                        case 4:
+                            this.className = "red";
+                            break;
+                    }
+
+                   index ++;
+
+                    index %=5;
+
+                };
+
+            </script>
+    </body>
+</html>
