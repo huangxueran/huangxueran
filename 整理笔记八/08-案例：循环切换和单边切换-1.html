@@ -1,0 +1,170 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 600px;
+            height: 470px;
+            margin: 100px auto;
+            user-select: none;
+        }
+        #wrap .show{
+            position: relative;
+            width: 100%;
+            height: 380px;
+        }
+        #wrap .show .top,#wrap .show .bottom{
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 25px;
+            background-color: rgba(0,0,0,.5);
+            line-height: 25px;
+            font-size:12px;
+            color: #fff;
+            text-align: center;
+            font-weight: bolder;
+        }
+        #wrap .show .top{
+            top: 0;
+        }
+        #wrap .show .bottom{
+            bottom: 0;
+        }
+        #wrap .show .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .show .img img{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .show .img img.on{
+            display: block;
+        }
+        #wrap .arrow p{
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 30px;
+            margin-top: -15px;
+            background-color: rgba(0,0,0,.5);
+            font-size: 12px;
+            color: #fff;
+            font-weight: bolder;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #wrap .arrow p.left{
+            left: 0;
+        }
+        #wrap .arrow p.right{
+            right: 0;
+        }
+        #wrap .btn{
+            width: 170px;
+            height: 40px;
+            margin: 50px auto 0;
+        }
+        #wrap .btn .btnChild{
+            width: 80px;
+            height: 40px;
+            background-color: #bbb;
+            line-height: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #wrap .btn .btnChild.left{
+            float: left;
+        }
+        #wrap .btn .btnChild.right{
+            float: right;
+        }
+        #wrap .btn .btnChild.on{
+            background-color: #f60;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <!-- 图片显示区 -->
+    <div class="show">
+        <p class="top"><span>1</span>/5</p>
+        <p class="bottom">下面的</p>
+
+        <div class="img">
+            <img src="images/1.jpg" class="on" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+            <img src="images/5.jpg" alt="">
+        </div>
+
+        <div class="arrow">
+            <p class="left"> &lt; </p>
+            <p class="right"> &gt; </p>
+        </div>
+    </div>
+
+    <!-- 按钮 -->
+    <div class="btn">
+        <div class="btnChild left on">单边切换</div>
+        <div class="btnChild right">循环切换</div>
+    </div>
+
+</div>
+
+<script>
+
+    //变量定义
+    var oRight = document.querySelector("#wrap .arrow .right"),
+        oLeft = document.querySelector("#wrap .arrow .left"),
+        aImg = document.querySelectorAll("#wrap .show .img img"),
+        topSpan = document.querySelector("#wrap .show .top span"),
+
+        len = aImg.length, //获取一共有多少张图片
+        index = 0; //用来表示当前显示的是第几张图片
+
+    //alert( len )
+
+    oRight.onclick = function () {
+        if(  index !== len-1  ){ //不超过序号最大限度的话，才能继续往下执行
+            aImg[index].className = ""; //当前的去掉名字 隐藏
+            index ++; // 序号 + 1
+            aImg[index].className = "on"; // 下一张显示
+            topSpan.innerHTML = index+1; // 顶部p标签计数
+        }
+    };
+
+    oLeft.onclick = function () {
+        if(  index !== 0  ){ //不低于最小序号
+            aImg[index].className = ""; //当前的去掉名字 隐藏
+            index --; //序号减1
+            aImg[index].className = "on"; // 下一张显示
+            topSpan.innerHTML = index+1; // 顶部p标签计数
+        }
+    };
+
+</script>
+</body>
