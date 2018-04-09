@@ -8,32 +8,46 @@
     <meta name="Description" content=""><!--描述-->
     <title>整理笔记（五）</title><!--网站标题-->
     <style>
+        body{font-family: "Microsoft YaHei",serif;}
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
+        #wrap span{
+            display: inline-block;
+            width: 65px;
+            height: 35px;
+            text-indent: 10px;
+            line-height: 35px;
+            font-size: 12px;
+            border: 1px solid pink;
+
+        }
     </style>
 </head>
-
     <body>
-        <div id="wrap"></div>
+    <div id="wrap">
 
-            <script>
+        <span>1*1-1</span>
+        <span>2*1-1</span><span>2*2-4</span>
 
-                var oWrap=document.getElementById("wrap");
+    </div>
 
-                var length=5;
+        <script>
 
-                //首先我们要循环n次
-
-                for(var n=0;n<length;n++){
-
-                    //一行n个
-
-                    var x=2*n+1;
-
-                    oWrap.innerHTML +=  "<p>*</p>"
-
-                };
-            </script>
+        </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

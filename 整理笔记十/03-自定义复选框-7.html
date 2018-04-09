@@ -1,0 +1,108 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap {
+            width: 600px;
+            height: 500px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        #wrap h4{
+            font-size: 14px;
+            border-bottom: 1px dashed #000;
+            line-height: 30px;
+        }
+        #wrap ul{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #wrap ul li{
+            float: left;
+            height:20px;
+            margin: 20px;
+            padding: 0 25px 0 25px;
+            font-size: 12px;
+            line-height: 20px;
+            background: url("img/ckbg1.jpg") no-repeat;
+            cursor: pointer;
+        }
+        #wrap ul li.checked{
+            background-image: url("img/ckbg2.jpg");
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h4>朝歌老师最喜欢的学员</h4>
+    <ul>
+        <!- - 假使有初始的id和class不能重复- ->
+        <li>小卑鄙</li>
+        <li>慕</li>
+        <li>懵懵懂懂</li>
+        <li>甜甜甜甜橙</li>
+        <li>雪柳</li>
+        <li>幺妹儿</li>
+        <li class="checked">Banana</li>
+    </ul>
+
+</div>
+
+<script>
+    //暂时只考虑没有其他className的情况
+
+    var aLi=document.querySelectorAll("#wrap ul li");
+
+    var length=aLi.length;
+
+    for(var i=0;i<length;i++){
+        //虽然这里面看起来只写了一个事件注册，但是是处在for循环中的，
+        //所以这个事件注册其实是给多个（length个）对象的
+        //所以当点击事件触发的时候，this指向是不同的li
+
+        aLi[i].onclick=aa;
+
+    }
+
+    //函数定义的时候，this的执行时不确定的
+    //函数执行的之后，才能知道this指向谁
+    function aa() {
+
+        this.className = this.className?"":"checked";
+    }
+        var x = oBox.innerHTML;
+
+        x = "123456";
+
+        //code;
+
+        x = "789";
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

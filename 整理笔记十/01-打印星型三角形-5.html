@@ -1,0 +1,69 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap" style="text-align: center"></div>
+
+<script>
+
+    var oWrap = document.getElementById("wrap");
+
+    var length = 30;
+
+    var mid = length/2;
+
+    for (var n=0;n<length;n++){
+
+        var x = 0;
+        if( n < mid ){
+            x = 2*n+1;
+        }else{
+            x = (length-1-n)*2+1;
+        }
+
+        var str = "<p>";
+        for(var i=0;i<x;i++){
+            if(  i === 0 || i === x-1  ){
+                str += "*";
+            }else{
+                str += "&nbsp;";
+            }
+        }
+        str += "</p>";
+
+        oWrap.innerHTML += str;
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

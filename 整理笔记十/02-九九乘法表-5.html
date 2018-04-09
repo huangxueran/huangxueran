@@ -1,0 +1,97 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            font-size:0;
+        }
+
+        #wrap span{
+            display: inline-block;
+            width: 65px;
+            height: 35px;
+            margin: 5px;
+            text-indent: 10px;
+            line-height: 35px;
+            font-size: 12px;
+            font-weight: bolder;
+            border: 1px solid pink;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <!--<span>1*1=1</span> <br>
+    <span>2*1=2</span><span>2*2=4</span> <br>
+    <span>2*1=2</span><span>2*2=4</span><span>2*2=4</span>-->
+
+</div>
+
+<script>
+
+    var oW = document.getElementById("wrap");
+
+    //第一种排列方式
+    for(var i=1;i<=9;i++) {//循环几天
+
+        var x = i;//每天几圈
+
+        var str = "";
+
+        for (var j = 1; j <= x; j++) {
+
+            str += "<span>" + i + "x" + j + "=" + i * j + "</span>";
+
+        }
+        ;
+
+        str += "<br>"; //每天跑完所有的span之后，换行
+
+        oW.innerHTML += str;
+    }
+
+
+
+    //3
+
+    for (i=9;i>=1;i--){
+        var str = "";
+        for (j=1;j<=i;j++){
+            str += "<span>"+i+"x"+j+"="+i*j+"</span>";
+        }
+        str += "<br>";
+        oW.innerHTML += str;
+    }
+
+    oW.innerHTML += "<hr><hr>";
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
