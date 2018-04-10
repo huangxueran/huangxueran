@@ -1,0 +1,87 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+        #wrap{
+            width: 130px;
+            margin:50px auto;
+            border:1px solid red;
+        }
+        #wrap .content p{
+            width:130px;
+            height: 35px;
+            background-color: #000;
+            color:#fff;
+            line-height: 35px;
+            text-indent: 16px;
+            cursor: pointer;
+        }
+        #wrap .content + .content{
+            margin-top:2px;
+        }
+        #wrap .content ul{
+            display:none;
+        }
+        #wrap .content ul.onclick{
+            display:block;
+        }
+        #wrap .content li{
+            background-color: skyblue;
+            color:#fff;
+            font-size: 14px;
+            text-indent: 16px;
+        }
+        .content li + li{
+            margin-top:1px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="content">
+        <p>朝歌哥</p>
+        <ul>
+            <li>帅气</li>
+            <li>英俊</li>
+            <li>谎话连篇</li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>阿飞飞</p>
+        <ul>
+            <li>一般帅</li>
+            <li>很骚气</li>
+            <li>老流氓</li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>小心艾</p>
+        <ul>
+            <li>小可耐</li>
+            <li>小脾气</li>
+            <li>无理取闹</li>
+        </ul>
+    </div>
+</div>
+        <script>
+            var aP = document.getElementsByTagName("p"),
+                aUl = document.getElementsByTagName("ul");
+                ength = aP.length;
+                for(var i=0;i<length;i++){
+                    aP[i].onclick=function () {
+                        aU[i].className="onClick";
+                        console.log(i);
+                    }
+                }
+        </script>
+</body>
+</html>
