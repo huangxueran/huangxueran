@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 320px;
+            height: 75px;
+            margin: 50px auto;
+            font-size: 12px;
+            line-height: 75px;
+            user-select: none;
+        }
+        #wrap span,#wrap ul,#wrap p{
+            float: left;
+        }
+        #wrap span.title{
+            color: red;
+        }
+        #wrap ul{
+            margin-top: 28px;
+        }
+        #wrap ul li{
+            float: left;
+            width: 19px;
+            height: 19px;
+            background-image: url("img/star.png");
+            cursor: pointer;
+        }
+        #wrap ul li.on{
+            background-position: 0 19px;
+        }
+        #wrap p{
+            width: 120px;
+            height: 73px;
+            margin-left: 30px;
+            border: 1px solid #bbb;
+            line-height: 20px;
+            color: #000;
+        }
+        #wrap p span{
+            display: none;
+        }
+        #wrap p span.on{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <span class="title">星级打分：</span>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p>
+        <span class="on">提示：请认真地给当前文档打分！</span>
+        <span>很差</span>
+        <span>较差</span>
+        <span>一般</span>
+        <span>很好！</span>
+        <span>超级棒！</span>
+    </p>
+</div>
+
+        <script>
+            (function() {
+                var aStars = document.querySelectorAll("#wrap ul li");
+
+                len = aStars.length;
+
+                for (var i = 0; i < len; i++) {
+                    aStars[i].onclick=function () {
+                        alert(1);
+                    };
+                }
+            })();
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

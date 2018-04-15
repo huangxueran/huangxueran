@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 320px;
+            height: 75px;
+            margin: 50px auto;
+            font-size: 12px;
+            line-height: 75px;
+            user-select: none;
+        }
+        #wrap span,#wrap ul,#wrap p{
+            float: left;
+        }
+        #wrap span.title{
+            color: red;
+        }
+        #wrap ul{
+            margin-top: 28px;
+        }
+        #wrap ul li{
+            float: left;
+            width: 19px;
+            height: 19px;
+            background-image: url("img/star.png");
+            cursor: pointer;
+        }
+        #wrap ul li.on{
+            background-position: 0 19px;
+        }
+        #wrap p{
+            width: 120px;
+            height: 73px;
+            margin-left: 30px;
+            border: 1px solid #bbb;
+            line-height: 20px;
+            color: #000;
+        }
+        #wrap p span{
+            display: none;
+        }
+        #wrap p span.on{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <span class="title">星级打分：</span>
+    <ul>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+    <p>
+        <span class="on">提示：请认真地给当前文档打分！</span>
+        <span>很差</span>
+        <span>较差</span>
+        <span>一般</span>
+        <span>很好！</span>
+        <span>超级棒！</span>
+    </p>
+</div>
+<script>
+    (function(){
+        var oUl = document.querySelector("#wrap ul"),
+            aStars = document.querySelectorAll("#wrap ul li"),
+            aSpan = document.querySelectorAll("#wrap p span"),
+            len = aStars.length,
+            score = -1, //默认评分
+            spanIndex = 0 //提示文字默认显示的序号
+        ;
+
+        //每个小星星需要添加的操作
+        for (var i=0;i<len;i++){
+            var dom = aStars[i];
+            dom.index = i;//自定义属性，以便在事件函数里面取到序号
+            dom.onmouseenter = enterFn;//移入事件
+            dom.onclick = clickFn;//点击事件
+        }
+        //Ul的离开事件
+        oUl.onmouseleave = function () {
+            statEach(score);
+        };
+
+        //小星星的点击事件
+        function clickFn(){
+            score = this.index;
+        }
+
+        //小星星的移入事件
+        function enterFn(){
+            statEach(this.index);
+        }
+
+        //封装的遍历操作
+        function statEach(x){
+            for (var j=0;j<len;j++){
+                aStars[j].className = j<=x?"on":"";
+            }
+            aSpan[spanIndex].className = "";
+            spanIndex = x+1;
+            aSpan[spanIndex].className = "on";
+        }
+    })();
+
+</script>
+</body>
+</html>

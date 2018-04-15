@@ -1,0 +1,95 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+        #wrap{
+            width:286px;
+            height:160px;
+            margin:50px auto;
+            border:1px solid red;
+        }
+        #wrap .header{
+            font-size:0;
+        }
+        .header span{
+            display:inline-block;
+            background-color:#000;
+            padding:5px 20px;
+            font-size:14px;
+            color:#fff;
+            cursor: pointer;
+        }
+        .header span.on{
+            background-color:#aaa;
+            color:#fff;
+        }
+        #wrap .content{
+            position:relative;
+        }
+        .content ul{
+            position:absolute;
+            display:none;
+            width:100%;
+            top:0;
+            left:0;
+        }
+        .content ul.onclick{
+            display:block;
+        }
+        .content ul li{
+            padding:4px 0 4px 5px;
+            border-bottom:1px dashed #aaa;
+            text-indent:12px;
+        }
+    </style>
+
+</head>
+
+<div id="wrap">
+    <div class="header">
+        <span class="on">热门排行</span>
+        <span>美图速递</span>
+        <span>社区Top</span>
+    </div>
+    <div class="content">
+        <ul class=onclick>
+            <li>阿飞又不来上班</li>
+            <li>小心艾又在发脾气</li>
+            <li>潭州准备开线下旗舰店</li>
+            <li>简直骚的不像话</li>
+        </ul>
+        <ul>
+            <li>能遇见你就是我最大的幸福 愿得一</li>
+            <li>最伤身体的10个生活习惯，一定要避</li>
+            <li>儿童淘气不要急 父母巧应对</li>
+            <li>孕妇产力不足 临产小诀窍</li>
+        </ul>
+        <ul>
+            <li>[重磅推荐]大量涉黄场所被清剿</li>
+            <li> [高清大图]胡兵复古大片激情四射</li>
+            <li>[活色生香]贝嫂内衣写真玉体横陈 </li>
+            <li>[高清大图]倪妮表情鬼马俏皮可爱 </li>
+        </ul>
+    </div>
+</div>
+
+            <script>
+                var aSpan = document.getElementsByTagName("span");
+                    length=aSpan.length;
+                    for(var i=0;i<length;i++){
+                        aSpan[i].onmouseout=function(){
+                            console.log(i);
+                        }
+                    }
+            </script>
+</body>
+</html>
