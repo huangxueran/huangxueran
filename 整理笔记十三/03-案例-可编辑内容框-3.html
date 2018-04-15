@@ -1,0 +1,92 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+        #wrap ul li{
+            height: 30px;
+            padding: 10px 0 10px 50px;
+            border-bottom: 1px solid red;
+            font-size:12px;
+            line-height: 30px;
+        }
+        #wrap ul li span,#wrap ul li input,#wrap ul li p{
+            float: left;
+        }
+        #wrap ul li.active span{
+            display: none;
+        }
+        #wrap ul li.active input{
+            display: block;
+        }
+        #wrap ul li input{
+            display: none;
+            margin-top: 5px;
+            color: #999;
+        }
+        #wrap ul li p{
+            width: 60px;
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<div id="wrap">
+    <ul>
+        <li>
+            <span>点击修改</span>
+            <input type="text" value="点击修改">
+            <p>修改</p>
+        </li>
+        <li>
+            <span>点击修改</span>
+            <input type="text" value="点击修改">
+            <p>修改</p>
+        </li>
+        <li>
+            <span>点击修改</span>
+            <input type="text" value="点击修改">
+            <p>修改</p>
+        </li>
+        <li>
+            <span>点击修改</span>
+            <input type="text" value="点击修改">
+            <p>修改</p>
+        </li>
+        <li>
+            <span>点击修改</span>
+            <input type="text" value="点击修改">
+            <p>修改</p>
+        </li>
+    </ul>
+</div>
+<script>
+    var oWrap = document.getElementById("wrap"),
+        aP = oWrap.getElementsByTagName("p"),
+        aLi = oWrap.getElementsByTagName("li"),
+        len = aP.length;
+
+    for(var i=0;i<len;i++){
+
+        aP[i].onclick=function () {
+           alert(this.index);
+        };
+        aP[i].index=i;
+    }
+</script>
+</body>
+</html>

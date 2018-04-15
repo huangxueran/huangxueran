@@ -1,0 +1,59 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+    </style>
+
+</head>
+
+<div id="wrap">
+
+</div>
+<script>
+        /*
+         作用域
+         scrtip是最大的作用域
+         function的{}里面，以及它的参数，是一个作用域
+         作用域链：
+             当我们处于某一个作用域里面使用变量时，先从自身作用域里面找改变量，
+             如果找不到，往父级作用域里面查找，以此类推，直到script作用域都找不到的话，报错。
+
+             当我们处于某一个作用域里面 修改某个变量的值时，也一样先修改自己的，
+             假设自己没有，修改父级的，依次类推，直到script作用域都找不到的话，就默认设置全局变量（非严格模式下且不推荐）
+          */
+        //a b 全局变量
+        var a = 10;
+        var b = 20;
+
+        fnn();
+
+        function fnn( x,y ) {
+            var c = 30;
+            var d = 40;
+
+            hh();
+            function hh(){
+                var a = 80;
+                var b = 90;
+            }
+
+            jj();
+            function jj() {
+                var a = 800;
+                var b = 900;
+
+                alert( a );
+            }
+        }
+</script>
+</body>
+</html>

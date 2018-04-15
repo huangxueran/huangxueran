@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+
+<!--
+    两个不同的script之间，
+    全局变量是相同的，
+    但是要注意运行顺序，只能后面的script读到前面的script里面的全局变量
+-->
+
+<script>
+    alert(a);
+    var a=10;
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
