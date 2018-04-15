@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 430px;
+            height: 204px;
+            margin: 50px auto;
+            user-select: none;
+        }
+        #wrap .left{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+        #wrap .left ul li{
+            width: 100%;
+            height: 30px;
+            margin-bottom: 3px;
+            background: #000;
+            color:#fff;
+            line-height: 30px;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #wrap .left ul li.on{
+            background-color: #f60;
+        }
+        #wrap .right{
+            float: right;
+            position: relative;
+            width: 326px;
+            height: 204px;
+        }
+        #wrap .right .part{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .right .part.on{
+            display: block;
+        }
+        #wrap .right ul{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .right ul.img li{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #wrap .right ul li.on{
+            display: block;
+        }
+        #wrap .right .part .tab{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 27px;
+            width: 100%;
+        }
+        #wrap .right .part .tab li{
+            float: left;
+            width: 25px;
+            height: 25px;
+            margin: 0 3px;
+            background: #000;
+            color: #fff;
+            line-height: 25px;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #wrap .right .part .tab li.on{
+            background: #f60;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="left">
+        <ul>
+            <li class="on">豪车</li>
+            <li>美味</li>
+            <li>美女风景</li>
+        </ul>
+    </div>
+
+    <div class="right">
+        <div class="part on">
+            <ul class="img">
+                <li class="on"><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li>
+            </ul>
+            <ul class="tab">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+
+        <div class="part">
+            <ul class="img">
+                <li class="on"><img src="img/m1.jpg"></li>
+                <li><img src="img/m2.jpg"></li>
+                <li><img src="img/m3.jpg"></li>
+                <li><img src="img/m4.jpg"></li>
+                <li><img src="img/m5.jpg"></li>
+            </ul>
+            <ul class="tab">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+        <div class="part">
+            <ul class="img">
+                <li class="on"><img src="img/s1.jpg"></li>
+                <li><img src="img/s2.jpg"></li>
+                <li><img src="img/s3.jpg"></li>
+                <li><img src="img/s4.jpg"></li>
+                <li><img src="img/s5.jpg"></li>
+            </ul>
+            <ul class="tab">
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script>
+
+    //左侧控制右侧大模块
+    (function(){
+        var aLeftLi = document.querySelectorAll("#wrap .left ul li"),
+            aRightPart = document.querySelectorAll("#wrap .right .part"),
+            len = aLeftLi.length,
+            leftIndex = 0 //用来表示左侧当前显示的序号
+        ;
+        for (var i = 0; i < len; i++) {
+            var dom = aLeftLi[i]
+            dom.index = i;
+            dom.onclick = function () {
+                var goudan = this.index;
+
+                //假设当前显示的序号和点击元素序号的一样，就直接中断执行
+                if( goudan === leftIndex )return;
+
+                aLeftLi[leftIndex].className = "";//清除原来的显示元素的名字
+                aRightPart[leftIndex].className = "part";//清除原来的rightPart部分的名字
+
+                leftIndex = goudan; //换序号
+
+                aLeftLi[leftIndex].className = "on";//给当前的添加名字
+                aRightPart[leftIndex].className = "part on";//给当前对应的right部分加名字
+
+                //给右侧的选项卡添加事件
+                rightAddEvent( goudan );
+            };
+        }
+
+        //自执行一次，保证初始的时候，右侧第一个模块能点击
+        rightAddEvent( 0 );
+
+        function rightAddEvent( index ) {
+            var rightDom = aRightPart[index], //获取对应的是哪一个右侧元素
+                aImg = rightDom.querySelectorAll(".img li"),//对应的img集合
+                aLi = rightDom.querySelectorAll(".tab li"),//对应的tab集合
+                len = aImg.length, //长度
+                rightIndex = 0
+            ;
+
+            //清空原来的显示
+            for (var i = 0; i < len; i++) {
+                aImg[i].className = "";
+                aLi[i].className = "";
+            }
+            aImg[0].className = "on";
+            aLi[0].className = "on";
+
+            //注册事件
+            for (i = 0; i < len; i++) {
+                var dom = aLi[i];
+                dom.index = i;
+                dom.onclick = function () {
+                    var goudan = this.index;
+
+                    if (goudan === rightIndex) return;
+
+                    aLi[rightIndex].className = "";
+                    aImg[rightIndex].className = "";
+
+                    rightIndex = goudan;
+
+                    aLi[rightIndex].className = "on";
+                    aImg[rightIndex].className = "on";
+                };
+            }
+        }
+
+    })();
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
