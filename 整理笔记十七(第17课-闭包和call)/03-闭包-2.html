@@ -1,0 +1,36 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+    </style>
+
+</head>
+
+<div id="wrap">
+
+</div>
+
+<script>
+    //可以访问别的函数作用域里面变量的函数 闭包
+    //这种return或者赋值给外面变量的方式，也可以得到函数内容的变量
+    //本质上不是访问到了函数内部的变量，只不过通过return或者转存的方式取到了值而已
+    var b=0;
+    function fn() {
+        var a=10;
+        console.log(a);
+        b=a;
+    }
+    fn();
+    alert(b);
+</script>
+</body>
+</html>

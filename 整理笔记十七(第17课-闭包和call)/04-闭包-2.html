@@ -1,0 +1,44 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body,ul,li,p{margin:0;padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+    </style>
+
+</head>
+
+<div id="wrap">
+
+</div>
+
+<script>
+    //可以访问别的函数作用域里面变量的函数 闭包
+    //会使被使用的变量不会被销毁
+    //通常，我们创建一个闭包的方式是：
+    //一个函数里面嵌套一个函数，
+    //内部函数引用外部函数的参数/变量
+    //函数的作用域，不是在哪里调用就在哪，而是在哪定义的就在哪儿
+    var a = 20;
+
+    function fn(){
+        var a = 10;
+        return function(){
+            a ++;
+            alert(a);
+        }
+    }
+    var b = fn();
+
+    b();
+    b();
+</script>
+</body>
+</html>
