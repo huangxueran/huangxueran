@@ -1,0 +1,145 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 400px;
+            border: 1px solid #aaa;
+            border-radius:15px;
+            margin: 50px auto;
+        }
+        #wrap ul{
+            padding: 30px 0;
+        }
+        #wrap ul li{
+            width: 100%;
+            height: 60px;
+            background: url(img/ck.png) no-repeat 20px 20px;
+            border-bottom: 1px solid #aaa;
+            line-height: 60px;
+            text-indent: 70px;
+            cursor: pointer;
+            color: #fff;
+        }
+        #wrap ul li.on{
+            background-image: url("img/cked.jpg");
+            text-indent: 50px;
+        }
+        #all{
+            width: 100%;
+            height: 60px;
+            background: url(img/ck.png) no-repeat 20px 20px;
+            line-height: 60px;
+            text-indent: 70px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+        #all.active{
+            background-image: url("img/cked.jpg");
+            text-indent: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <ul id="list">
+        <!-- <li>项目1</li>
+         <li>项目2</li>
+         <li>项目3</li>-->
+    </ul>
+
+    <p id="all">全选</p>
+
+</div>
+
+<script>
+
+    /*
+    回顾：
+        动态方法  ByClassName   ByTagName   ByName ……
+        静态方法  querySelectorAll
+     */
+
+    (function(length){
+        var oUl = document.getElementById("list"),
+            aLi = oUl.getElementsByTagName("li"),
+            oAll = document.getElementById("all");
+
+        //生成length个 li标签列表
+        (function(){
+            var arrColor  = ["#333" , "#666" , "#999"];
+            var str = "";
+            for (var i = 0; i < length; i++) {
+                str += "<li style='background-color:"+arrColor[i%3]+";'>项目"+(i+1)+"</li>";
+            }
+            oUl.innerHTML = str;
+        })();
+
+        //给Li添加点击事件
+        (function(){
+            //循环添加点击事件
+            for (var i = 0; i < length; i++) {
+                aLi[i].onclick = clickFn;
+            }
+            //事件函数单独列出来
+            function clickFn() {
+                this.className = this.className?"":"on";
+                //检测是不是所有的li都勾选上了！
+                var bool = true;
+                for (var i = 0; i < length; i++) {
+                    if( !aLi[i].className ){
+                        bool = false;
+                        break;
+                    }
+                }
+                oAll.className = bool?"active":"";
+            }
+        })();
+
+        //oAll 的点击事件
+        (function(){
+            oAll.onclick = function () {
+                var cName;
+                if(  this.className  ){
+                    this.className = "";
+                    cName = "";
+                }else{
+                    this.className = "active";
+                    cName = "on";
+                }
+                for (var i=0;i<length;i++){
+                    aLi[i].className = cName;
+                }
+            }
+        })();
+    })(10);
+
+    /*
+    * this.className = this.className?"":"on";
+    * 这样做局限性太大了，只有没有默认名字得情况下能使用
+    * */
+
+
+    /*//闭包实现序号的获取
+    !function (i) {
+        aLi[i].onclick = function () {
+            alert(i);
+        };
+    }(i);*/
+
+</script>
+</body>
+</html>
