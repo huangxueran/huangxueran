@@ -18,13 +18,17 @@
 </head>
 <body>
 <div id="wrap">
-
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </div>
 
 <script>
-    var str="我自己的名字";
-    var l=str.length;
-    alert(l);
+    var aP = document.getElementsByTagName("div");
+    aP.push(4);
+    console.log(aP);//报错
 </script>
 </body>
 </html>

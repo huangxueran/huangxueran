@@ -18,13 +18,18 @@
 </head>
 <body>
 <div id="wrap">
-
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </div>
 
 <script>
-    var str="我自己的名字";
-    var l=str.length;
-    alert(l);
+    var aP=document.getElementsByTagName("div");
+    var newObj=[].slice.call(aP,0);//将一个伪数组变成一个真正的数组
+    console.log(newObj);
+
 </script>
 </body>
 </html>

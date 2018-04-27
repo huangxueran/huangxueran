@@ -22,9 +22,15 @@
 </div>
 
 <script>
-    var str="我自己的名字";
-    var l=str.length;
-    alert(l);
+    var arr = [5,6,7,null,"乌拉"];
+    arr[0] = 999;
+
+    console.log(arr);
+
+    //字符串是不能下标赋值的（不能修改），也不能通过改变lenth来改变个数
+    var str="快乐";
+    str[0]="哎";
+    console.log(str);
 </script>
 </body>
 </html>

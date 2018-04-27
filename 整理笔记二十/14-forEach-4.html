@@ -22,9 +22,12 @@
 </div>
 
 <script>
-    var str="我自己的名字";
-    var l=str.length;
-    alert(l);
+    var DOM=document.getElementsByTagName("div");
+        [].slice(DOM).forEach(function (a,b,c) {
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        })
 </script>
 </body>
 </html>
