@@ -1,0 +1,110 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6,input{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 640px;
+            height: 330px;
+            border: 1px solid #aaa;
+            margin: 100px auto;
+        }
+        .search{
+            overflow: hidden;
+            padding-top: 10px;
+            margin-left: 20px;
+        }
+        .search input{
+            float: left;
+            margin: 5px;
+        }
+        .search input[type="text"]{
+            width: 200px;
+            height: 24px;
+        }
+        .search input[type="button"]{
+            width: 50px;
+            height: 30px;
+        }
+        .txt{
+            padding:20px;
+        }
+        .txt p{
+            text-indent: 2em;
+            margin: 10px 0;
+        }
+        .txt p span{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="search">
+        <input type="text" class="inp1">
+        <input type="button" class="inp2" value="搜索">
+        <input type="text" class="inp3">
+        <input type="button" class="inp4" value="替换">
+        <input type="button" class="inp5" value="重置">
+    </div>
+
+    <div class="txt">
+        <p>张家界是湖南省辖地级市，原名大庸市，辖2个市辖区（永定区、武陵源区）、2个县（慈利县、桑植县）。位于湖南西北部，澧水中上游，属武陵山区腹地。[1] 张家界因旅游建市，是中国最重要的旅游城市之一，是湘鄂渝黔革命根据地的发源地和中心区域。</p>
+        <p>1982年9月，张家界国家森林公园成为中国第一个国家森林公园。</p>
+        <p>1988年8月，张家界武陵源风景名胜区被列入国家重点风景名胜区；1992年，由张家界国家森林公园等三大景区构成的武陵源风景名胜区被联合国教科文组织列入《世界自然遗产名录》；2004年2月，被列入全球首批《世界地质公园》；2007年，被列入中国首批国家5A级旅游景区。[2]</p>
+    </div>
+
+</div>
+
+<script>
+
+    /*
+    初始 或者 每步结束之后，将内容先用变量存储起来
+     */
+
+    (function(){
+
+        var oTxt = document.querySelector("#wrap .txt"),
+            aInp = document.querySelectorAll("#wrap .search input"),
+
+            TXT = oTxt.innerHTML,//先获取所有的HTML字符串
+            TXTXT = TXT
+        ;
+
+        //搜索的点击
+        aInp[1].onclick = function () {
+            var val = aInp[0].value; //获取第一个输入的内容
+            if(  !val  )return; //假设输入框里面没有东西，结束
+            oTxt.innerHTML = TXT.split( val ).join( "<span>"+ val +"</span>" );
+        };
+
+        //替换的点击
+        aInp[3].onclick = function () {
+            var val1 = aInp[0].value,
+                val2 = aInp[2].value;
+            if( !(val1 && val2) )return; //两个框都有内容才能继续往下执行
+            oTxt.innerHTML = TXT.split( val1 ).join( "<span>"+ val2 +"</span>" );
+            TXT = TXT.split( val1 ).join( val2 );//更新TXT的内容，因为已经替换了
+        };
+
+        //重置的点击
+        aInp[4].onclick = function () {
+            oTxt.innerHTML = TXTXT;
+            aInp[0].value = aInp[2].value = "";
+        };
+
+    })();
+</script>
+</body>
+</html>
