@@ -1,0 +1,52 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+<script>
+    window.getComputedStyle =
+        window.getComputedStyle || function(a){
+            return a.currentStyle;
+        };
+
+    var oWrap = document.getElementById("wrap");
+
+        /*
+          @param
+               1. object  必须 DOM元素节点对象
+               2. string  必须 要获取的属性
+          @return
+               object  [CSSStyleDeclaration] 元素的css样式集合对象
+          */
+    function getStyle(dom , attr){
+        /*
+            //      left/top
+            if(attr ==="left"){
+            return dom.offsetLeft;
+            }
+         */
+        return getComputedStyle(dom)[attr];
+
+    }
+
+</script>
+</body>
+</html>

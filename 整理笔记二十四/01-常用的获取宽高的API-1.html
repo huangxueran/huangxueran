@@ -12,25 +12,24 @@
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
-
+        #wrap{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px 10px;
+        }
     </style>
 </head>
 <body>
-<div id="wrap">
-
-</div>
+<div id="wrap"></div>
 
 <script>
-    //只有a才是全局的变量
-    //b也是变量，但是只能在函数内部调用自己的时候使用
-    !function(){
-        console.log(1111);
+  var oWrap=document.getElementById("wrap");
 
-        //在匿名函数调用自己的时候，只能使用callee了
-        //在严格模式下，不支持这个api
-        console.log(arguments.callee);
+    oWrap.clientWidth
+    oWrap.offsetWidth
+    oWrap.scrollWidth
 
-    }();
 </script>
 </body>
 </html>

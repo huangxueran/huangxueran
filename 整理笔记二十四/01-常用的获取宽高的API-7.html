@@ -8,23 +8,28 @@
     <meta name="Description" content=""><!--描述-->
     <title>整理笔记（五）</title><!--网站标题-->
     <style>
+        body{font-family: "Microsoft YaHei",serif;}
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
+        #wrap {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px 20px 10px 10px;
+            border: 5px solid #000000;
+        }
     </style>
 </head>
-
 <body>
-<div id="wrap"></div>
-
+<div id="wrap">
+    kuilekuailekuailekuailekuailekuailekuailekuailekuailekuailekuailekuailekuailekuailekuaile</div>
 <script>
-    /*
-        [ ]
-    */
-    var a=[10,20,30];
-    a.goudan="狗蛋";
+    var oWrap=document.getElementById("wrap");
 
-    console.log(a);
+    var w=oWrap.scrollWidth;//如果不超出，值和clientWidth是一样的，内容超出之后，代表超出整体的宽度
+
+    console.log(w);
 
 </script>
 </body>
