@@ -1,0 +1,56 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft hYaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6,input{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            overflow: hidden;
+            border: 1px dashed #999;
+        }
+        #wrap span{
+            float: left;
+            width: 100px;
+            height: 35px;
+            line-height:35px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bolder;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+
+<script>
+
+    var oW = document.getElementById("wrap");
+
+    setInterval(function () {
+
+        var color = randomColor();
+
+    } , 500);
+
+    function randomColor(){
+        var str = "#";
+        for (var i = 0; i < 6; i++) {
+            str += Math.floor(Math.random()*16).toString(16);
+        }
+        return str;
+    }
+
+</script>
+</body>
+</html>

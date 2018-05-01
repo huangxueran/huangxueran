@@ -8,7 +8,7 @@
     <meta name="Description" content=""><!--描述-->
     <title>整理笔记（五）</title><!--网站标题-->
     <style>
-        body{font-family: "Microsoft YaHei",serif;}
+        body{font-family: "Microsoft hYaHei",serif;}
         body,dl,dd,p,h1,h2,h3,h4,h5,h6,input{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
         img{border:none;}
@@ -21,12 +21,24 @@
 </div>
 
 <script>
-    var arr=[8,2,37,7,6];
-    arr.jj=9999;
+    /*
+    clearInterval()
 
-    for(var key in arr){
-        console.log(typeof key);
-        console.log(arr[key]);
+    clearTimeout()
+
+    要停止定时器，首先得将对于的设置定时器的函数返回值拿到,
+
+    该返回值是代表当前定时器的序号的数字，但是不推荐使用该数字去做其他的运行，仅仅用它来停止定时器
+
+     */
+    function fn() {
+        console.log(2)
+    }
+
+    var x=setInterval(fn,500);
+
+    document.onclick=function () {
+        clearInterval(x);
     }
 </script>
 </body>
