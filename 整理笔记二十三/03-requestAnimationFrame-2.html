@@ -1,0 +1,55 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 0;
+            height: 200px;
+           background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+
+<script>
+    /*
+    requestAnimationFrame()
+        H5里面一个新的定时器API
+        和setTimeout比较像，也只执行一次，但是不能自主设置时间
+
+        cancelAnimationFrame(  )
+    */
+
+    /*  requestAnimationFrame(fn);
+
+             function fn() {
+                //Code……
+      }*/
+    var oW=document.getElementById("wrap");
+    initWidth=0;
+
+    function clickFn() {
+        !function move() {
+            initWidth+=2;
+            oW.style.width=initWidth+"px";
+            requestAnimationFrame(move);
+        }();
+    }
+
+    document.onclick=clickFn;
+</script>
+</body>
+</html>

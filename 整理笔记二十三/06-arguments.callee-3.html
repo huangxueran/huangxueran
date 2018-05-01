@@ -1,0 +1,36 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+
+<script>
+    //只有a才是全局的变量
+    //b也是变量，但是只能在函数内部调用自己的时候使用
+    !function(){
+        console.log(1111);
+
+        //在匿名函数调用自己的时候，只能使用callee了
+        //在严格模式下，不支持这个api
+        console.log(arguments.callee);
+
+    }();
+</script>
+</body>
+</html>
