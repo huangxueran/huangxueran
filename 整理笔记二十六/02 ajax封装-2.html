@@ -1,0 +1,61 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft hYaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6,input{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+
+<script>
+    /*
+        ajaxd
+     */
+    ajax({
+        url:'http://localhost:3000',
+        /* data:{      //发送的数据
+             name:'goudan',
+             age:18
+         },    这里可以省略    */
+        success:function (msg) {
+            console.log(msg)
+        },
+        error:function (msg) {
+            console.error(msg)
+        }
+    });
+    function ajax(obj) {
+        //不传method默认使用get请求
+        var method =obj.method || 'get',
+            url=obj.url,
+            //不传async就默认异步
+            //true
+            //underfine
+            //false
+            async=obj.async || false;
+        data=obj.data,
+            success=obj.success,
+            error=obj.error;
+
+        var str="";
+        //处理data数据
+        //name=fy&age=18
+        //name=fy&age=18&  备注:可以在后面添加&,但不可以在后面添加&
+        for(var key in data){ //statement
+            str+=key +"=" + data[key]+ '&'
+
+        }
+    }
+</script>
+</body>
+</html>
