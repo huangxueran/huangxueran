@@ -1,0 +1,42 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        #box{
+            width:200px;
+            height:200px;
+            padding:10px;
+            border:15px solid #f00;
+            margin:25px;
+        }
+    </style>
+</head>
+<body style="width:2000px; height: 1000px;">
+<div id="box"></div>
+
+<script>
+    /*    clientWidth    //获取元素的content宽/高 + padding的宽/高
+         clientHeight
+
+    *    offsetWidth    //获得取元素的content宽/高 + padding的宽/高 + border的大小
+    *    offsetHeight
+    *    offsetTop    获取元素离定位父级的顶部距离
+    *    offsetLeft
+    *
+    *    scorllWidth
+    *    scorllHeight
+    *
+   */
+    var oBox=document.getElementById("box");
+    console.log(document.body.clientHeight);//获取页面的宽高
+</script>
+</body>
+</html>

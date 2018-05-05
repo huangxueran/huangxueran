@@ -1,0 +1,48 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        #box{
+            width:200px;
+            height:200px;
+            background-color: #f66;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span>1111</span>
+    <span>222</span>
+    <span>3333</span>
+    <span>4444</span>
+</div>
+
+<script>
+    /*
+     *  obj.appendChild()   在obj内容中的最后面添加一个子节点
+     *  oBox.insertBefore ( a, b)   在oBox的任意一个子节点前面添加一个子节点
+     *  removeChild()    删除子节点
+     *
+     *  cloneNode()  克隆节点，有参数
+     *      false   默认值，浅克隆，只复制节点本身，不复制内容
+     *      true    深度克隆,会复制内容
+     */
+    var oBox=document.getElementById("box");
+    var oP=document.createElement("p");
+    oP.innerHTML="我是被文档创建的元素节点";
+    oP.onclick=function(){
+        alert("1");
+    };
+    oBox.replaceChild(oP,oBox.children[2]);
+
+</script>
+</body>
+</html>

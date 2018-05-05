@@ -1,0 +1,107 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+        .clearfix:after{
+            display: block;
+            clear: both;
+            content:"";
+        }
+        #box {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            border: 4px solid #000;
+        }
+
+        #box .left, #box .right {
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        #box .left{
+            background-color: #feffdd;
+        }
+        #box .left li span{
+            color: #f00;
+            padding:0 5px;
+            cursor: pointer;
+        }
+        #box  li{
+            float: left;
+            padding:2px 4px;
+            margin:10px 4px;
+            font-size:16px;
+        }
+        #box .left li.city{
+            border:1px solid #f00;
+        }
+        #box .right{
+            background-color: #a2ffbf;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="left">
+        <ul class="select clearfix">
+            <li>请选择你想要去的地方：</li>
+            <li class="city">莫斯科</li>
+            <li class="city">大理</li>
+            <li class="city">土耳其</li>
+            <li class="city">潭州</li>
+            <li class="city">长沙</li>
+        </ul>
+        <ul class="result clearfix">
+
+        </ul>
+    </div>
+    <ul class="right"></ul>
+</div>
+
+<script>
+    var oBox = document.getElementById("box"),
+        aLi = oBox.querySelectorAll(".left .select .city"),
+        oResult = oBox.querySelector(".left .result"),
+        oRight = oBox.querySelector(".right"),
+        len = aLi.length;
+    for(var i = 0; i < len; i++){
+        aLi[i].bool = false;
+        aLi[i].onclick = function (){
+            if(!this.bool){//当this.bool为false的进入
+                var li1 = this.cloneNode(true),
+                    li2 = this.cloneNode(true),
+                    span = document.createElement("span"),
+                    that = this;
+                console.log(that)
+                span.innerHTML = "X";
+                span.onclick = function () {
+                    oResult.removeChild(li1);
+                    oRight.removeChild(li2);
+                    that.bool = !that.bool;
+                };
+                li1.appendChild(span);
+                oResult.appendChild(li1);
+                oRight.appendChild(li2);
+                this.bool = !this.bool;//开关取反
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

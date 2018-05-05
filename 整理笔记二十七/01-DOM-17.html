@@ -1,0 +1,83 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        #box{
+            width:200px;
+            height:200px;
+            background-color:#f66;
+            font-size:30px;
+            color:#fff;
+        }
+        p{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box">123
+    <p></p>
+    <ul>
+        <li>快乐1</li>
+        <li>快乐2</li>
+        <li>快乐3</li>
+    </ul>
+    <div></div>
+</div>
+
+<script>
+    /*
+       *   js的三大组成：
+       *       DOM   文档的对象模型
+       *       BOM
+       *       ECMAScript   es，js的语法规范
+       *   节点：
+       *       document  文档节点
+       *       html元素  元素节点
+       *       文字、空格、换行    文本节点
+       *       html标签属性   属性节点
+       *       注释节点
+       *
+       *   元素节点和节点的区别:
+       *       只有标签才是元素节点
+       *
+       *   常用的：children、nodeName、tagName、parentNode、offsetParent
+       *
+       *   childNodes  获取子节点 ，包括文本节点也算。在IE8及以下不会返回空格的文本节点，除非是文字
+       *   children   获取子元素节点，没有兼容性问题。动态获取
+       *   nodeType   获取节点类型 ，返回的是编号
+       *   nodeName   获取的节点名称
+       *   tagName    获取的标签名称
+       *   getAttributeNode("属性名")   获取属性节点
+       *   createAttribute()    创建一个属性节点
+       *   obj.setAttributeNode()   给obj添加属性节点
+       *
+       *
+       *  firstElementChild    获取第一个子元素节点，不兼容IE8及以下
+       *  lastElementChild    获取最后一个子元素节点，兼容性同上
+       *  nextElementSibling   获取下一个兄弟元素节点
+       *  previousElementSibling    获取上一个兄弟元素节点
+       *
+       *   firstChild  获取第一个子节点，在主流浏览器可能会返回文本节点，
+       *                   但是在IE8及以下不会返回空格换行的文本节点，除非是文字
+       *   lastChild    获取最后一个子节点，兼容性同上
+       *   nextSibling   获取下一个兄弟节点
+       *   previousSibling   获取上一个兄弟节点
+       *
+       *   parentNode   获取父节点,没有兼容性问题
+       *   offsetParent   获取参考父级，以谁为定位参考，就获取谁
+       *   childElementCount   获取子元素节点的长度，不兼容IE8
+     */
+    var oBox=document.getElementById('box');
+    console.log(oBox.children[0].offsetParent);
+</script>
+</body>
+</html>
