@@ -1,0 +1,63 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        div{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100px;
+            height:100px;
+            border:10px solid #f00;
+            background-color: #000000;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    Ball(10);
+    function  Ball(num) {
+        for (var i = 0; i < num; i++) {
+            var div = document.createElement("div");
+            div.speedX = Math.floor(Math.random() * 10 + 2);
+            div.speedY = Math.floor(Math.random() * 10 + 2);
+            console.log(div.speedX + " " + div.speedY);
+            document.body.appendChild(div);
+        }
+        var aDiv = document.querySelectorAll("div");
+        maxX = document.documentElement.clientWidth = aDiv[0].offsetWidth;
+        maxY = document.documentElement.clientHeight = aDiv[0].offsetHeight;
+        moveBall();
+
+        function moveBall() {
+            for (var i = 0; i < num; i++) {
+                var startTop = aDiv[i].offsetTop + aDiv[i].speedY,
+                    startLeft = aDiv[i].offsetLeft + aDiv[i].speedX;
+                if(startTop<=0 || startTop>=maxY){
+                    startTop=Math.max(0,startTop);
+                    startTop=Math.min(startTop,maxY);
+                    aDiv[i].speedY=-aDiv[i].speedY;
+                }
+                if(startLeft<=0 || startLeft>=maxX){
+                    startLeft=Math.max(0,startLeft);
+                    startLeft=Math.min(startLeft,maxX);
+                    aDiv[i].speedX=-aDiv[i].speedX;
+                }
+                aDiv[i].style.top = startTop + "px";
+                aDiv[i].style.left = startLeft + "px";
+            }
+                requestAnimationFrame(moveBall,25);
+        }
+    }
+</script>
+</body>
+</html>
