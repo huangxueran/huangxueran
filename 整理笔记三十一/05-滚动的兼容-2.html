@@ -1,0 +1,40 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        div{
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body style="height: 2000px;">
+
+<script>
+    //用户要执行的东西，事件函数
+    function wheel(e,direction) {
+        console.log("我滚动了");
+    }
+    mouseWheel(document.wheel);
+    function mouseWheel(obj,eFn) {
+        function fn(e) {
+            e= e ||window.event;
+            //让滚动方向和值统一
+            var direction = e.wheelDelta / 120 || -e.detail / 3 ;
+            eFn.call(obj,e,direction);
+        }
+    }
+    console.log(document.onmousewheel)
+</script>
+</body>
+</html>

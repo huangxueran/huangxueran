@@ -1,0 +1,34 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记（五）</title><!--网站标题-->
+    <style>
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+
+    </style>
+</head>
+<body style="height: 2000px;">
+<div id="box"></div>
+
+<script>
+    /*
+    onmousewheel  唯独不支持火狐
+        e.wheelDelta   获取滚动方向。
+            往上滚是正，往下滚是负。值是120的倍数
+    DOMMouseScroll   在火狐的写法
+        e.detail  获取滚动方向.
+            往上滚是正，往下滚是负。值是 3 的倍数
+     */
+    document.addEventListener("DOMMouseScroll",function (e) {
+        e = e  || window.event;
+        console.log(e.detail);//他显示的效果是3的倍数
+    });
+</script>
+</body>
+</html>
