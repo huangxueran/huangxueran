@@ -1,0 +1,54 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记二</title><!--网站标题-->
+    <style type="text/css">
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            position: absolute;
+            top: 500px;
+            left: 500px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<div id="wrap"></div>
+
+<script>
+
+    var ele = document.getElementById("wrap");
+
+    document.onkeydown = function (ev) {
+        var kCode = ev.keyCode;
+
+        switch (kCode){
+            case 37://左
+                ele.style.left = ele.offsetLeft - 10 + 'px';
+                break;
+            case 38://上
+                ele.style.top = ele.offsetTop - 10 + 'px';
+                break;
+            case 39://右
+                ele.style.left = ele.offsetLeft + 10 + 'px';
+                break;
+            case 40://下
+                ele.style.top = ele.offsetTop + 10 + 'px';
+                break;
+        }
+    };
+
+</script>
+</body>
+</html>

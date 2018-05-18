@@ -1,0 +1,48 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记二</title><!--网站标题-->
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+<input type="text" id="test">
+<script>
+    /*
+   onfocus  获得焦点时触发
+   onblur  失去焦点时触发
+
+   onchange
+   oninput
+   onselect
+
+   focus()
+   blur()
+   select()
+    */
+    var oTest = document.getElementById("test");
+
+    oTest.onfocus = function (ev) {
+        console.log("哇哇哇哇！好开心啦！");
+    }
+    oTest.onblur = function (ev) {
+        console.log("失宠了，嘤嘤嘤");
+    }
+</script>
+</body>
+</html>
