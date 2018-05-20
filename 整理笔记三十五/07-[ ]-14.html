@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+
+<script>
+    /*
+     | 或者
+
+     字符集 []
+         里面每个字符的或者功能
+         在最前面加上了 ^ 之后，就是除了的意思
+         大部分有特殊意义的字符在字符集里面是没有特殊意义的
+
+         字段   两个字符Unicode码之间包夹的所有码对应的字符都能匹配
+
+         [0-9]
+         [a-z]
+         [A-Z]
+         这是网址:http://caibaojian.com/zhongwen-regexp.html
+      */
+    var str="1547jt:ya";
+
+    var reg = /[0-阿]+/g;
+
+    console.log(str.match(reg));
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

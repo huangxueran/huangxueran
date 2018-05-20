@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+
+<script>
+    /*
+   量词 {}
+
+       {n} n个
+       {n,m} 最少n个 最多m个
+       {n,} 最少n个，最大没限制
+
+   几个特殊量词的简写
+       {1,}   +
+       {0,1}  ?
+       {0,}   *
+
+   贪婪，惰性
+       量词默认是贪婪的
+       量词再跟上一个?字符就是惰性匹配
+
+    match
+       字符串.match(正则)
+       返回匹配的内容数组，否则返回null
+       \d 表示数字
+    */
+    var str = "4588464564是6545646547";
+    var reg=/\d{2,3}/;
+    console.log(reg.test(str));
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
