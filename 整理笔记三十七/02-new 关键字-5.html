@@ -1,0 +1,50 @@
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记二</title><!--网站标题-->
+    <style type="text/css">
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+
+</div>
+<script>
+    /*new 关键字
+    可以通过new来执行函数，对该函数的影响有：
+                1. 函数内部的this不再指向window，而是在函数内部自动创建一个新对象，
+                    this指向这个对象
+    2. 函数不再默认返回undefined，而是默认返回刚刚新创建的对象
+    */
+
+    //构造函数          类
+    function createT(n , a){
+        this.name = n;
+        this.age = a;
+        this.sayHellow = function () {
+            alert( "Hello!" );
+        }
+    }
+
+    var a = new createT("阿飞" , 18),
+        b = new createT("乌拉" , 20),
+        c = new createT("朝歌" , 50),
+        d = new createT("心艾" , 22);
+
+    console.log(a);
+    console.log(b);
+
+</script>
+</body>
+</html>
