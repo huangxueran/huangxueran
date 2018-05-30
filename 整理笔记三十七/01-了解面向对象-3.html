@@ -20,8 +20,26 @@
 <div id="wrap">
 
 </div>
-    <script>
-        
-    </script>
+<script>
+    function createT(n , a){
+        var obj= {
+            name : n,
+            age : a,
+            sayHellow :function () {
+                alert( "Hello!" );
+            }
+        };
+        return obj;
+    }
+
+    var a = createT("阿飞" , 18),
+        b = createT("乌拉" , 20),
+        c = createT("朝歌" , 50),
+        d = createT("心艾" , 22);
+
+    console.log(a);
+    console.log(b);
+
+</script>
 </body>
 </html>

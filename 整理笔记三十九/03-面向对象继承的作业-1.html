@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<!doctype html><!--文档头信息-->
+<html><!--根标签-->
+<head><!--头部标签-->
+    <meta charset="UTF-8"><!--字符编码-->
+    <meta name="Generator" content="EditPlus®"><!--使用编辑器-->
+    <meta name="Author" content="黄学然"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--描述-->
+    <title>整理笔记二</title><!--网站标题-->
+    <style>
+        body{font-family:"Microsoft yahei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        .wrap{
+            position: relative;
+            width: 658px;
+            height: 411px;
+            margin: 50px auto;
+        }
+        .wrap .img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .wrap .img li{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .wrap .img li.on{
+            display: block;
+        }
+        .wrap .tab{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            width: 102px;
+            height: 20px;
+            margin-left: -51px;
+        }
+        .wrap .tab li{
+            float: left;
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            margin: 3px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .wrap .tab li.on{
+            background-color: #f60;
+        }
+        .wrap .arrow li{
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-weight: bolder;
+            background-color: rgba(0,0,0,.4);
+            cursor: pointer;
+            user-select: none;
+            -moz-user-select: none;
+        }
+        .wrap .arrow li.left{
+            left: 0;
+        }
+        .wrap .arrow li.right{
+            right: 0;
+        }
+        .wrap .arrow li:hover{
+            background-color: rgba(0,0,0,.8);
+        }
+
+
+        #tab{
+            position: relative;
+            width: 210px;
+            height: 200px;
+            background-color: pink;
+            margin: 50px auto;
+        }
+        #tab .content{
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 170px;
+            line-height: 170px;
+            text-align: center
+        }
+        #tab .content li{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #tab .content li.active{
+            display: block;
+        }
+        #tab .tab{
+            width: 100%;
+            height: 30px;
+        }
+        #tab .tab li{
+            float: left;
+            width: 69px;
+            height: 30px;
+            border-right: 1px solid #fff;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bolder;
+            background-color: #bbb;
+            cursor: pointer;
+        }
+        #tab .tab li.active{
+            background-color: #f60;
+        }
+    </style>
+</head>
+<body>
+
+<div id="tab">
+    <ul class="content">
+        <li class="active">AAAA</li>
+        <li>BBBB</li>
+        <li>CCCC</li>
+    </ul>
+    <ul class="tab">
+        <li class="active">A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+</div>
+
+<div id="wrap" class="wrap">
+    <ul class="img">
+        <li class="on"><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+    <ul class="tab">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div id="wrap2" class="wrap">
+    <ul class="img">
+        <li class="on"><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+    </ul>
+    <ul class="tab">
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="arrow">
+        <li class="left"> < </li>
+        <li class="right"> > </li>
+    </ul>
+</div>
+<script>
+
+    //将整个选项卡的功能抽象理解为一个类
+    (function(){
+        function Tab(tabDom , imgDom , tabClass , imgClass){
+            this.tabDom = tabDom;
+            this.imgDom = imgDom;
+            this.length = imgDom.length;
+            this.index = 0;
+            this.tabClass = tabClass;
+            this.imgClass = imgClass;
+            this.click();
+        }
+        Tab.prototype.click = function(){
+            var that = this;
+            for(var i=0;i<this.length;i++){
+                this.tabDom[i].i = i;
+                this.tabDom[i].onclick = function(){
+                    var index = this.i;
+                    that.change(function () {
+                        this.index = index;
+                    });
+                };
+            }
+        };
+        Tab.prototype.change = function(fn){
+            this.imgDom[this.index].classList.remove(this.imgClass);
+            this.tabDom[this.index].classList.remove(this.tabClass);
+            fn.call(this);
+            this.imgDom[this.index].classList.add(this.imgClass);
+            this.tabDom[this.index].classList.add(this.tabClass);
+        };
+        window.Tab = Tab;
+    })();
+
+
+    //TabAuto继承Tab
+    (function(){
+        function TabAuto(){
+            this.oWrap = arguments[4];
+            this.timer;
+            Tab.apply(this,arguments);
+            this.auto();
+            this.stopAuto();
+        }
+        function G(){}
+        G.prototype = Tab.prototype;
+        TabAuto.prototype = new G();
+        TabAuto.prototype.auto = function(){
+            var that = this;
+            this.timer = setInterval(function () {
+                that.change(function(){
+                    that.index ++;
+                    that.index %= that.length;
+                });
+            } , 3000);
+        };
+        TabAuto.prototype.stopAuto = function(){
+            var that = this;
+            this.oWrap.onmouseenter = function () {
+                clearInterval(that.timer);
+            };
+            this.oWrap.onmouseleave = function () {
+                that.auto();
+            };
+        };
+        window.TabAuto = TabAuto;
+    })();
+
+
+    //TabAutoArrow继承TabAuto
+    (function(){
+        function TabAutoArrow(){
+            this.leftArrow = arguments[5];
+            this.rightArrow = arguments[6];
+            TabAuto.apply(this,arguments);
+            this.arrowClick();
+        }
+        function G(){}
+        G.prototype = TabAuto.prototype;
+        TabAutoArrow.prototype = new G();
+        TabAutoArrow.prototype.arrowClick = function(){
+            var That = this;
+            this.leftArrow.onclick = function () {
+                That.change(function () {
+                    this.index --;
+                    if(this.index<0)this.index = this.length-1;
+                });
+            };
+            this.rightArrow.onclick = function () {
+                That.change(function () {
+                    this.index ++;
+                    this.index %= this.length;
+                });
+            }
+        };
+
+        window.TabAutoArrow = TabAutoArrow;
+    })();
+
+
+
+
+    //Tab实例测试
+    new Tab(
+        document.querySelectorAll("#tab .tab li"),
+        document.querySelectorAll("#tab .content li"),
+        "active","active"
+    );
+
+    //TabAuto实例测试
+    new TabAuto(
+        document.querySelectorAll("#wrap .tab li"),
+        document.querySelectorAll("#wrap .img li"),
+        "on","on",
+        document.getElementById("wrap")
+    );
+
+    //TabAutoArrow实例测试
+    new TabAutoArrow(
+        document.querySelectorAll("#wrap2 .tab li"),
+        document.querySelectorAll("#wrap2 .img li"),
+        "on","on",
+        document.getElementById("wrap2"),
+        document.querySelector("#wrap2 .arrow .left"),
+        document.querySelector("#wrap2 .arrow .right")
+    );
+
+</script>
+</body>
+</html>

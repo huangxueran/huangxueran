@@ -15,7 +15,7 @@
     <meta name="Keywords" content="作业"><!--关键字-->
     <meta name="Description" content=""><!--描述-->
     <title>整理笔记二</title><!--网站标题-->
-    <style type="text/css">
+    <style>
         body{font-family: "Microsoft YaHei",serif;}
         body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
         ol,ul,li{margin:0;padding:0;list-style:none;}
@@ -23,35 +23,33 @@
 
     </style>
 </head>
-
 <body>
-<div id="wrap">
+<div id="wrap" class="aaa aa bb"></div>
 
-</div>
 <script>
-    var obj = {};
-    obj.name = "快乐";
 
-    Object.defineProperties(obj , {
-        age : {
-            enumerable : false, //可枚举性
-            writable : true, //可写性
-            configurable : false, //可删除性
-            value : "18"
-        },
-        sex : {
-            enumerable : false, //可枚举性
-            writable : false, //可写性
-            configurable : false, //可删除性
-            value : "男"
+    var oWrap = document.getElementById("wrap");
+
+    console.dir(oWrap);
+
+    removeClass(oWrap , "bb");
+
+    function addClass( ele , cName ){
+        if( ele.classList ){
+            ele.classList.add(cName);
+        }else{
+            if( new RegExp("(\\s|^)" + cName + "(\\s|$)").test(ele.className) )return;
+            ele.className += " "+cName;
         }
-    });
+    }
 
-    obj.age = 20;
-    obj.sex = "女";
-
-    console.log(obj);
-
+    function removeClass(ele , cName){
+        if( ele.classList ){
+            ele.classList.remove(cName);
+        }else{
+            ele.className = ele.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)") , " ");
+        }
+    }
 </script>
 </body>
 </html>
