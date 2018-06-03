@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}5
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a>
+    <a href=""></a><a href=""></a>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    /*
+        index 获取当前jq对象的序号
+        不传参数，默认获取当前元素在父级子元素里面的序号
+        传选择器字符串，……
+        传jq对象，反过来去理解的
+     */
+    var $p=$("p");
+    console.log( $p.eq(1).index( "p" ) );//1
+</script>
+
+</body>
+</html>
